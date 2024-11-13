@@ -16,38 +16,43 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.red,
       ),
       backgroundColor: Colors.red,
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 240,
-          ),
-          const Text(
-            'Aviator Predicator',
-            style: TextStyle(fontSize: 26, color: Colors.white),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(13.0),
-            child: Container(
-              color: Colors.white,
-              height: 200,
-              width: 450,
-              child: Column(
-                children: [
-                  const TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(labelText: 'Email'),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(labelText: 'Password'),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ElevatedButton(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 240,
+            ),
+            const Text(
+              'Aviator Predicator',
+              style: TextStyle(fontSize: 26, color: Colors.white),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: Container(
+                color: Colors.white,
+                height: 300,
+                width: 450,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(labelText: 'Email'),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(labelText: 'Password'),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -56,12 +61,22 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         );
                       },
-                      child: const Text('Continue'))
-                ],
+                      child: const Text('Continue'),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Developed by: 'Arian Ahamed Emon'",
+                      style: TextStyle(
+                          color: Colors.grey, fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
